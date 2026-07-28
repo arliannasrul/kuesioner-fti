@@ -36,8 +36,8 @@ export async function GET() {
       "ID",
       "Nama",
       "Masukan",
-      "Ada Gambar",
-      "Ada Screenshot",
+      "Gambar",
+      "Screenshot",
       "Waktu",
     ];
 
@@ -45,8 +45,8 @@ export async function GET() {
       escapeCsvCell(item.id),
       escapeCsvCell(item.name),
       escapeCsvCell(item.feedback),
-      escapeCsvCell(item.imageUrl ? "Ya" : "Tidak"),
-      escapeCsvCell(item.screenshotUrl ? "Ya" : "Tidak"),
+      escapeCsvCell(item.imageUrl || "-"),
+      escapeCsvCell(item.screenshotUrl || "-"),
       escapeCsvCell(item.createdAt.toISOString()),
     ]);
 
